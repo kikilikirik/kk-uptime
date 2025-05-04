@@ -23,14 +23,15 @@ function setup() {
     console.log(myData);
     p.createCanvas(innerWidth, innerHeight);
     p.background("black");
+    //console.log(innerHeight)
 }
 function draw() {
     p.background("black");
     p.fill("white");
     p.textSize(32);
-    p.text(myData[0], 100, 100);
-    p.text(myData[1], 100, 200);
-    p.text(myData[2], 100, 300);
-    p.text(myData[3], 100, 400);
-    p.text(myData[4], 100, 500);
+
+    for(let i = 0; i < innerWidth; i += innerWidth / 49){
+    p.circle(i + 13, 46, innerWidth / 50);
+    }
+
 }
