@@ -14,7 +14,8 @@ const p = new p5((sketch) => {
     sketch.draw = draw;
 });
 function preload() {
-    myData = p.loadJSON('https://prototypes.at/kk/') as number[];
+    //myData = p.loadJSON('https://prototypes.at/kk/') as number[];
+    myData = p.loadJSON('test.json') as number[];
 
 }
 //todo: load jason
@@ -27,9 +28,9 @@ function draw() {
     p.background("black");
     p.fill("white");
     p.textSize(32);
-    p.text(myData[1], 100, 100);
-    p.text(myData[2], 100, 200);
-    p.text(myData[3], 100, 300);
-    p.text(myData[4], 100, 400);
-    p.text(myData[5], 100, 500);
+    p.text(myData[0], 100, 100);
+    p.text(myData[1], 100, 200);
+    p.text(myData[2], 100, 300);
+    p.text(myData[3], 100, 400);
+    p.text(myData[4], 100, 500);
 }
