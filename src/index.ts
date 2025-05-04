@@ -1,3 +1,10 @@
+/*TODOS:
+1: Kreise zeichnen rot grün
+2: for schleife durch array und kreise zeichen 
+3: if ob 1 oder 0 wenn 1 GRÜN wenn 0 ROT
+4: x variable erhöhen aber nicht in for schleife sondern wie bei Leberkas
+5: es sind 49 objekte im array
+*/
 import p5 from "p5";
 let myData: number[]= [] ;
 
@@ -12,7 +19,7 @@ function preload() {
 }
 //todo: load jason
 function setup() {
-    console.log(myData[1]);
+    console.log(myData);
     p.createCanvas(innerWidth, innerHeight);
     p.background("black");
 }
