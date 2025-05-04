@@ -26,15 +26,15 @@ function setup() {
 }
 function draw() {
 
-  for (let i = 0; i < innerWidth; i += innerWidth / 49) {
+  for (let i = 0; i < innerWidth; i += innerWidth / 49) { 
     for (let x = 0; x < myData.length; x++) {
         if (myData[x] === 0) {
             p.fill('red');
-         
+            p.circle(i + 13, 46, innerWidth / 50);
           } else if (myData[x] === 1) {
             p.fill('green');
+            p.circle(i + 13, 46, innerWidth / 50);
         }
-        p.circle(i + 13, 46, innerWidth / 50);
     }
   }
 }
