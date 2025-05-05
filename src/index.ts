@@ -34,8 +34,7 @@ function crirclesandrects() {
   // for the rects
   let rectbbegin = 66;
   let rectheight = 50;
-  // for the circles
-  let circlebeginheight = 200;
+  
   // for schleife lauft durch und ändert wert des arrays dieser wird dann geprüft in dem if 
   // es wird auch die variable WERT geändert
   for (let i = 0; i < innerWidth; i += innerWidth / indexofarray) {
@@ -45,7 +44,7 @@ function crirclesandrects() {
     } else if (myData[wert] === good) {
       p.fill('green');
     }
-    p.circle(i + 13, circlebeginheight, innerWidth / indexofarray);
+    //p.circle(i + 13, circlebeginheight, innerWidth / indexofarray);
     p.rect(i, rectbbegin, innerWidth / indexofarray, rectheight);
   }
 }
