@@ -13,8 +13,8 @@ const p = new p5((sketch) => {
   sketch.draw = draw;
 });
 function preload() {
-  //myData = p.loadJSON('https://prototypes.at/kk/') as number[];
-  myData = p.loadJSON('test.json') as number[];
+  myData = p.loadJSON('https://prototypes.at/kk/') as number[];
+ // myData = p.loadJSON('test.json') as number[];
 }
 //todo: load jason
 function setup() {
