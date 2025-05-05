@@ -14,7 +14,7 @@ const p = new p5((sketch) => {
 });
 function preload() {
   myData = p.loadJSON('https://prototypes.at/kk/') as number[];
- // myData = p.loadJSON('test.json') as number[];
+  // myData = p.loadJSON('test.json') as number[];
 }
 //todo: load jason
 function setup() {
@@ -26,16 +26,13 @@ function setup() {
 function draw() {
   let wert = 0;
 
-
-  for (let i = 0; i < innerWidth; i += innerWidth / 49) { 
-         wert = Math.floor(i / (innerWidth / 49));
-        if (myData[wert] === 0) {
-            p.fill('red');
-        
-          } else if (myData[wert] === 1) {
-            p.fill('green');
-        }
-        p.circle(i + 13, 46, innerWidth / 50);
+  for (let i = 0; i < innerWidth; i += innerWidth / 49) {
+    wert = Math.floor(i / (innerWidth / 49));
+    if (myData[wert] === 0) {
+      p.fill('red');
+    } else if (myData[wert] === 1) {
+      p.fill('green');
     }
+    p.circle(i + 13, 46, innerWidth / 50);
   }
-
+}
