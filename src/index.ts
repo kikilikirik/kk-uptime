@@ -13,7 +13,7 @@ const p = new p5((sketch) => {
 
 function preload() {
   myData = p.loadJSON('https://prototypes.at/kk/') as number[];
-  // myData = p.loadJSON('test.json') as number[];
+  //myData = p.loadJSON('test.json') as number[];
 }
 
 function setup() {
@@ -32,13 +32,13 @@ function crirclesandrects() {
   let good = 1;
   let indexofarray = 49;
   // for the rects
-  let rectbbegin = 66;
+  let rectbbegin = 0;
   let rectheight = 50;
-  
-  // for schleife lauft durch und ändert wert des arrays dieser wird dann geprüft in dem if 
+
+  // for schleife lauft durch und ändert wert des arrays dieser wird dann geprüft in dem if
   // es wird auch die variable WERT geändert
   for (let i = 0; i < innerWidth; i += innerWidth / indexofarray) {
-    wert = Math.floor(i / (innerWidth / indexofarray));
+    wert = wert + 1;
     if (myData[wert] === bad) {
       p.fill('red');
     } else if (myData[wert] === good) {
