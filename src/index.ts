@@ -1,8 +1,5 @@
 /*TODOS:
-1: Kreise zeichnen rot grün 
-2: for schleife durch array und kreise zeichen 
-3: if ob 1 oder 0 wenn 1 GRÜN wenn 0 ROT
-4: x variable erhöhen aber nicht in for schleife sondern wie bei Leberkas
+
 */
 import p5 from 'p5';
 let myData: number[] = [];
@@ -11,28 +8,44 @@ const p = new p5((sketch) => {
   sketch.setup = setup;
   sketch.preload = preload;
   sketch.draw = draw;
+  sketch.circlesandrects = crirclesandrects;
 });
+
 function preload() {
   myData = p.loadJSON('https://prototypes.at/kk/') as number[];
   // myData = p.loadJSON('test.json') as number[];
 }
-//todo: load jason
+
 function setup() {
   console.log(myData);
   p.createCanvas(innerWidth, innerHeight);
   p.background('black');
-  //console.log(innerHeight)
 }
 function draw() {
-  let wert = 0;
+  crirclesandrects();
+}
 
-  for (let i = 0; i < innerWidth; i += innerWidth / 49) {
-    wert = Math.floor(i / (innerWidth / 49));
-    if (myData[wert] === 0) {
+function crirclesandrects() {
+  // for the arrays
+  let wert = 0;
+  let bad = 0;
+  let good = 1;
+  let indexofarray = 49;
+  // for the rects
+  let rectbbegin = 66;
+  let rectheight = 50;
+  // for the circles
+  let circlebeginheight = 200;
+  // for schleife lauft durch und ändert wert des arrays dieser wird dann geprüft in dem if 
+  // es wird auch die variable WERT geändert
+  for (let i = 0; i < innerWidth; i += innerWidth / indexofarray) {
+    wert = Math.floor(i / (innerWidth / indexofarray));
+    if (myData[wert] === bad) {
       p.fill('red');
-    } else if (myData[wert] === 1) {
+    } else if (myData[wert] === good) {
       p.fill('green');
     }
-    p.circle(i + 13, 46, innerWidth / 50);
+    p.circle(i + 13, circlebeginheight, innerWidth / indexofarray);
+    p.rect(i, rectbbegin, innerWidth / indexofarray, rectheight);
   }
 }
