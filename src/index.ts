@@ -24,16 +24,18 @@ function setup() {
   //console.log(innerHeight)
 }
 function draw() {
+  let wert = 0;
+
 
   for (let i = 0; i < innerWidth; i += innerWidth / 49) { 
-    for (let x = 0; x < myData.length; x++) {
-        if (myData[x] === 0) {
+         wert = Math.floor(i / (innerWidth / 49));
+        if (myData[wert] === 0) {
             p.fill('red');
         
-          } else if (myData[x] === 1) {
+          } else if (myData[wert] === 1) {
             p.fill('green');
         }
+        p.circle(i + 13, 46, innerWidth / 50);
     }
-    p.circle(i + 13, 46, innerWidth / 50);
   }
-}
+
